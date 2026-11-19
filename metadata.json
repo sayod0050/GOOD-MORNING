@@ -1,0 +1,6 @@
+{
+  "name": "S&S Reminder",
+  "description": "A modern planner, timer, and loud alarm reminder app created by SAYOD & SUBHON (S&S).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

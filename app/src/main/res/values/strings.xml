@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">S&amp;S Reminder</string>
+    <string name="splash_credit">Created by SAYOD &amp; SUBHON (S&amp;S)</string>
+    <string name="about_credit">Developed by SAYOD and SUBHON — S&amp;S</string>
+    <string name="alarm_channel_name">Reminder Alarms</string>
+    <string name="alarm_channel_description">Loud full-screen alerts and music for scheduled plans and timers.</string>
+    <string name="action_done">Done</string>
+    <string name="action_snooze">Snooze</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_settings">Settings</string>
+</resources>
