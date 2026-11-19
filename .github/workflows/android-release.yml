@@ -3,8 +3,7 @@ name: Build & Auto-Release S&S Reminder APK
 on:
   push:
     branches:
-      - main
-      - master
+      - "**"
     tags:
       - "v*"
   workflow_dispatch:
@@ -27,6 +26,9 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Set up Android SDK & Accept Licenses
+        uses: android-actions/setup-android@v3
+
       - name: Set up Gradle 9.3.1
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -41,15 +43,14 @@ jobs:
       - name: Build Debug APK
         run: gradle assembleDebug --no-daemon
 
-      - name: Rename APK for Release
-        run: |
-          cp app/build/outputs/apk/debug/app-debug.apk S-and-S-Reminder-v1.0.0.apk
+      - name: Prepare Release APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk S-and-S-Reminder.apk
 
       - name: Upload APK Workflow Artifact
         uses: actions/upload-artifact@v4
         with:
           name: S-and-S-Reminder-APK
-          path: S-and-S-Reminder-v1.0.0.apk
+          path: S-and-S-Reminder.apk
 
       - name: Create GitHub Release with APK
         uses: softprops/action-gh-release@v2
@@ -60,6 +61,6 @@ jobs:
             Automated APK build for **S&S Reminder**.
             Created by **SAYOD & SUBHON (S&S)**.
 
-            Download `S-and-S-Reminder-v1.0.0.apk` below and install it on your Android device.
-          files: S-and-S-Reminder-v1.0.0.apk
+            Click `S-and-S-Reminder.apk` below to download and install on Android.
+          files: S-and-S-Reminder.apk
           generate_release_notes: true
